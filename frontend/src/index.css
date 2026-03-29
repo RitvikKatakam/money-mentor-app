@@ -1,0 +1,173 @@
+:root {
+  --bg-dark: #0f172a;
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --accent: #22d3ee;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f1f5f9;
+  --text-dim: #94a3b8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.accent-text {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+/* Auth Utilities */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-small {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.bank-logo-card:hover {
+  transform: scale(1.08);
+  border-color: rgba(34, 211, 238, 0.5) !important;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+  cursor: pointer;
+}
+
+.bank-logo-card:hover .bank-name-hidden {
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .bank-logo-card {
+    width: 100px !important;
+    height: 60px !important;
+  }
+}
+
+.auth-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2322d3ee%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem top 50%;
+  background-size: 0.65rem auto;
+  transition: all 0.3s ease;
+}
+
+.custom-select:hover {
+  border-color: rgba(34, 211, 238, 0.5) !important;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.1);
+}
+
+.custom-select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+  outline: none;
+}
+
+.custom-select option {
+  background: var(--bg-dark);
+  color: var(--text-main);
+  padding: 10px;
+}
+
+.custom-select option:disabled {
+  color: #64748b;
+}
+
+.hover-card-neon {
+  border-top: 4px solid #22d3ee;
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.05) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+.hover-card-neon:hover {
+  border-color: #22d3ee;
+  box-shadow: 0 -5px 25px rgba(34, 211, 238, 0.2);
+  transform: translateY(-5px);
+}
+
+.hover-card-success {
+  border-top: 4px solid #00ff88;
+  background: linear-gradient(180deg, rgba(0, 255, 136, 0.05) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+.hover-card-success:hover {
+  border-color: #00ff88;
+  box-shadow: 0 -5px 25px rgba(0, 255, 136, 0.2);
+  transform: translateY(-5px);
+}
+
+.hover-card-warning {
+  border-top: 4px solid #ff4b4b;
+  background: linear-gradient(180deg, rgba(255, 75, 75, 0.05) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+.hover-card-warning:hover {
+  border-color: #ff4b4b;
+  box-shadow: 0 -5px 25px rgba(255, 75, 75, 0.2);
+  transform: translateY(-5px);
+}
+
+.hover-card-blue {
+  border-top: 4px solid #3b82f6;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+.hover-card-blue:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 -5px 25px rgba(59, 130, 246, 0.2);
+  transform: translateY(-5px);
+}

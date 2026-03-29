@@ -1,0 +1,13 @@
+fastapi
+pydantic
+groq
+uvicorn
+python-dotenv
+requests
+langgraph
+httpx
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+langchain-groq
+langsmith

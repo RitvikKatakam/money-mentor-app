@@ -1,0 +1,13 @@
+node_modules/
+.env
+__pycache__/
+*.webp
+*.png
+!outcomes/*.png
+*.mp4
+.DS_Store
+dist/
+build/
+.next/
+.vscode/
+.gemini/
