@@ -2,6 +2,10 @@ from fastapi import FastAPI, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from passlib.context import CryptContext
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -72,12 +76,16 @@ class ChatRequest(BaseModel):
 
 try:
     from langchain_groq import ChatGroq
-    llm = ChatGroq(
-        temperature=0,
-        groq_api_key="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",
-        model="llama-3.1-8b-instant"
-    )
-except ImportError:
+    groq_api_key = os.getenv("GROQ_API_KEY")
+    if groq_api_key:
+        llm = ChatGroq(
+            temperature=0,
+            groq_api_key=groq_api_key,
+            model="llama-3.1-8b-instant"
+        )
+    else:
+        llm = None
+except Exception:
     llm = None
 
 @app.post("/api/mentor/chat")
